@@ -1,0 +1,22 @@
+{
+  "name": "namaster-react-learning",
+  "version": "1.0.0",
+  "description": "An app to learn react in-depth",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aloklearning/namastey-react-learning.git"
+  },
+  "author": "Alok Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aloklearning/namastey-react-learning/issues"
+  },
+  "homepage": "https://github.com/aloklearning/namastey-react-learning#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}
