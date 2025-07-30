@@ -2,12 +2,6 @@
 
 A project created to learn in-depth of React fundamentals while creating a production ready app from the course [Namastey React](https://namastedev.com/learn/namaste-react) 🚀, created by Akshay Saini.
 
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
 ## Parcel
 
 Parcel as a bundler does a lot of things for us, which eventually makes the project faster and ready for production, comprising of:
@@ -24,9 +18,15 @@ Parcel as a bundler does a lot of things for us, which eventually makes the proj
 - Tree Shaking: Removing unused codes
 - Different bundles for Dev and Production
 - Hot Module Replacements (HMR)
-  - File Watcing Algorithm ( Written in C++)
+  - File Watching Algorithm ( Written in C++)
 - Differential Bundling: Supporting older browser
 - Minification/Compression to reduce the bundle size
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Links
 
