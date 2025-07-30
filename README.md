@@ -2,26 +2,6 @@
 
 A project created to learn in-depth of React fundamentals while creating a production ready app from the course [Namastey React](https://namastedev.com/learn/namaste-react) 🚀, created by Akshay Saini.
 
-## Parcel
-
-Parcel as a bundler does a lot of things for us, which eventually makes the project faster and ready for production, comprising of:
-
-- Dev Build
-- Code Splitting
-- Error Handling
-- Hosting on HTTPS
-- Bundling the app
-- Consistent Hashing
-- Image Optimisations
-- Caching (.parcel-cache)
-- Local Server for building
-- Tree Shaking: Removing unused codes
-- Different bundles for Dev and Production
-- Hot Module Replacements (HMR)
-  - File Watching Algorithm ( Written in C++)
-- Differential Bundling: Supporting older browser
-- Minification/Compression to reduce the bundle size
-
 <!-- LICENSE -->
 
 ## License
