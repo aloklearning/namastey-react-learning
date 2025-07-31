@@ -7,7 +7,15 @@
     <title>Namastey React</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- 
+      A fallback practise to let the dev know that something went wrong with 
+      react rendering, or the react project overall, which led to no replacement
+      of what we had rendered into the react, via root.render(React.createElement()),
+      which eventually "replaces" the whole content inside div.root  
+      -->
+      <h1>Not Rendered</h1>
+    </div>
 
     <!-- App.js becomes a module and not a normal file which lets us to import/export inside the JS file -->
     <script type="module" src="./App.js"></script>
