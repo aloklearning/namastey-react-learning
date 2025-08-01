@@ -10,8 +10,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Links
 
+- [Babel](https://babeljs.io/)
+  - [Babel Playground](https://babeljs.io/repl#)
 - [Browsers List](https://browserslist.dev/)
 - [Parcel Documentation](https://parceljs.org/getting-started/webapp/)
 - [Parcel Production Documentation](https://parceljs.org/features/production/)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+- [React without JSX (Old)](https://legacy.reactjs.org/docs/react-without-jsx.html)
+- [React without JSX (New)](https://react.dev/reference/react/createElement#creating-an-element-without-jsx)

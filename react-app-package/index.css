@@ -1,3 +1,7 @@
 #heading {
   color: red;
 }
+
+.input-container {
+  display: inline-flex;
+}
