@@ -14,6 +14,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
   - [Babel Playground](https://babeljs.io/repl#)
 - [Browsers List](https://browserslist.dev/)
 - [Parcel Documentation](https://parceljs.org/getting-started/webapp/)
-- [Parcel Production Documentation](https://parceljs.org/features/production/)
 - [React without JSX (Old)](https://legacy.reactjs.org/docs/react-without-jsx.html)
 - [React without JSX (New)](https://react.dev/reference/react/createElement#creating-an-element-without-jsx)
+- [Parcel Production Documentation](https://parceljs.org/features/production/)
+- [React Fibre Architecture (GitHub)](https://github.com/acdlite/react-fiber-architecture)
