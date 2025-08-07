@@ -49,3 +49,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.search-filter-container {
+  display: flex;
+  margin: 10px 10px;
+}
