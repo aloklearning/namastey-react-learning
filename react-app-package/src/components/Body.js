@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [search, setSearch] = useState("");
@@ -20,6 +21,10 @@ const Body = () => {
 
     fetchRestaurants();
   }, []);
+
+  if (resLists.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div style={{ padding: "10px" }}>
