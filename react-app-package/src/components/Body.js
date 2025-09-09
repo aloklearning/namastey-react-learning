@@ -22,11 +22,9 @@ const Body = () => {
     fetchRestaurants();
   }, []);
 
-  if (resLists.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
+  return resLists.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div style={{ padding: "10px" }}>
       <div className="search-filter-container">
         <input
