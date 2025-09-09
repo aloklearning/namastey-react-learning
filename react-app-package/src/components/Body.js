@@ -9,6 +9,7 @@ import Shimmer from "./Shimmer";
  * reconcilliation cycle (re-renders the component)
  */
 const Body = () => {
+  const [error, setError] = useState("");
   const [resLists, setResLists] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -18,16 +19,20 @@ const Body = () => {
   }, []);
 
   const fetchRestaurants = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9068684&lng=77.6635175&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const jsonData = await data.json();
+    try {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9068684&lng=77.6635175&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+      const jsonData = await data.json();
 
-    const restaurants =
-      jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setResLists(restaurants);
-    setFilteredRestaurants(restaurants);
+      const restaurants =
+        jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+      setResLists(restaurants);
+      setFilteredRestaurants(restaurants);
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const filterRestaurants = () => {
@@ -38,6 +43,10 @@ const Body = () => {
     );
     setFilteredRestaurants(filteredRestaurants);
   };
+
+  if (error) {
+    return <h1 style={{ color: "red" }}>{error}</h1>;
+  }
 
   return resLists.length === 0 ? (
     <Shimmer />
