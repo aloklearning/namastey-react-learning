@@ -30,3 +30,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 - [React without JSX (New)](https://react.dev/reference/react/createElement#creating-an-element-without-jsx)
 - [Parcel Production Documentation](https://parceljs.org/features/production/)
 - [React Fibre Architecture (GitHub)](https://github.com/acdlite/react-fiber-architecture)
+- [Resolving CORS Issue in Dev Mode](https://nordicapis.com/10-free-to-use-cors-proxies/)
