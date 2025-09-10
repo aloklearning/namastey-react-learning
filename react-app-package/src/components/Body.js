@@ -14,6 +14,11 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
+  /**
+   * When the dependency array is empty, useEffect will only be called once after the render
+   * When the dependency array is filled, it will re-render every time that value inside dependency
+   * array changes
+   */
   useEffect(() => {
     fetchRestaurants();
   }, []);
@@ -21,7 +26,7 @@ const Body = () => {
   const fetchRestaurants = async () => {
     try {
       const data = await fetch(
-        "https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9068684&lng=77.6635175&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://raw.githubusercontent.com/namastedev/namaste-react/refs/heads/main/swiggy-api"
       );
       const jsonData = await data.json();
 
