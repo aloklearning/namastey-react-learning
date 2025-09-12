@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
 import Body from "./components/Body";
 import About from "./components/About";
@@ -11,7 +11,12 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Body />
+      {/* 
+        Outlet helps the react to replaces the item inside 
+        the same page based upon the new path. It's like a 
+        placeholder for the new pages/component to come-in
+      */}
+      <Outlet />
     </div>
   );
 };
@@ -20,15 +25,21 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     Component: App,
+    children: [
+      {
+        path: "/",
+        Component: Body,
+      },
+      {
+        path: "/about",
+        Component: About,
+      },
+      {
+        path: "/contact",
+        Component: Contact,
+      },
+    ],
     errorElement: <Error />,
-  },
-  {
-    path: "/about",
-    Component: About,
-  },
-  {
-    path: "/contact",
-    Component: Contact,
   },
 ]);
 

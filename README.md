@@ -14,6 +14,16 @@ A project created to learn in-depth of React fundamentals while creating a produ
   render, on demand. This helps it do prioritisation and implementation smooth, making it faster then the other
   libraries and frameworks.
 
+# Types of Routing
+
+## Server Side Routing
+
+This type of routing happens when the client requests server for every page of the specified route. The server responds with the HTML page, and then it gets reflected on the client (browser).
+
+# Client Side Routing
+
+This type of routing happens when the page/project is already loaded, and it is being replaced by the page/route asked on the client itself, making it faster, smooth UX and better routing. This is the reason why we call this process as **Single Page Application (SPA)**.
+
 <!-- LICENSE -->
 
 ## License
