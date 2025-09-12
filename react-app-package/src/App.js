@@ -6,6 +6,7 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 const App = () => {
   return (
@@ -37,6 +38,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         Component: Contact,
+      },
+      {
+        path: "/restaurants/:resId", // After collan (:) the route becomes dynamic in the param
+        Component: RestaurantMenu,
       },
     ],
     errorElement: <Error />,

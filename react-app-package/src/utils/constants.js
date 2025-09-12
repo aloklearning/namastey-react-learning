@@ -3,3 +3,12 @@ export const LOGO_URL =
 
 export const CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
+// The below URL works well without CORS given by Namastey React Course Team
+// "https://raw.githubusercontent.com/namastedev/namaste-react/refs/heads/main/swiggy-api";
+// The current one which we are exporting needs CORS extention to be used else, CORS issue will persist
+export const SWIGGY_API_URL =
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9068684&lng=77.6635175&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+export const SWIGGY_RESTAURANT_MENU_API_URL =
+  "http://swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9068684&lng=77.6635175&restaurantId=";

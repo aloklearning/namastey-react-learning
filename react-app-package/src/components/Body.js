@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { SWIGGY_API_URL } from "../utils/constants";
 
 /**
  ** IMPORTANT *
@@ -25,9 +26,7 @@ const Body = () => {
 
   const fetchRestaurants = async () => {
     try {
-      const data = await fetch(
-        "https://raw.githubusercontent.com/namastedev/namaste-react/refs/heads/main/swiggy-api"
-      );
+      const data = await fetch(SWIGGY_API_URL);
       const jsonData = await data.json();
 
       const restaurants =

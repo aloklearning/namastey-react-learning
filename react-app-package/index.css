@@ -66,3 +66,8 @@
   height: 400px;
   background-color: #f0f0f0;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}
