@@ -11,13 +11,24 @@ class UserClass extends React.Component {
    */
   constructor(props) {
     super(props);
+    this.state = { count: 0 }; // state variable definition
   }
 
   render() {
+    const { count } = this.state;
     const { name, location } = this.props;
 
     return (
       <div className="user-card">
+        <h2>Count: {count}</h2>
+        <button
+          onClick={() => {
+            // NEVER UPDATE STATE DIRECTLY
+            this.setState({ count: this.state.count + 1 });
+          }}>
+          Increment Count
+        </button>
+
         <h3>Name: {name}</h3>
         <h4>Location: {location}</h4>
         <h5>Contact: @aloklearning</h5>
