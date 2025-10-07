@@ -2,19 +2,12 @@ import React from "react";
 import UserClass from "./UserClass";
 
 class About extends React.Component {
-  constructor(props) {
-    super(props);
-
-    console.log("Parent Constructor");
-  }
-
-  componentDidMount() {
-    console.log("Parent Component Did Mount");
+  // No props required, if we are not accepting any
+  constructor() {
+    super();
   }
 
   render() {
-    console.log("Parent Renderer");
-
     return (
       <>
         <h1>About Page</h1>
