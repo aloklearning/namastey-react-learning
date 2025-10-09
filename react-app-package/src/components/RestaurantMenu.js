@@ -1,25 +1,13 @@
 import { useParams } from "react-router";
-import { useState, useEffect } from "react";
 
 import Shimmer from "./Shimmer";
-import { SWIGGY_RESTAURANT_MENU_API_URL } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
   // This destructured constant value is the name which you
   // have defined in the config of useBrowserRouter in App.js
   const { resId } = useParams();
-  const [resMenu, setResMenu] = useState(null);
-
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(SWIGGY_RESTAURANT_MENU_API_URL + resId);
-    const json = await data.json();
-
-    setResMenu(json.data);
-  };
+  const resMenu = useRestaurantMenu(resId);
 
   if (!resMenu) return <Shimmer />;
 

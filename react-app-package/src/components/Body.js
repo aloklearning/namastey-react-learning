@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { SWIGGY_API_URL } from "../utils/constants";
+import useRestaurants from "../utils/useRestaurants";
 
 /**
  ** IMPORTANT *
@@ -10,34 +10,10 @@ import { SWIGGY_API_URL } from "../utils/constants";
  * reconcilliation cycle (re-renders the component)
  */
 const Body = () => {
-  const [error, setError] = useState("");
-  const [resLists, setResLists] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-  /**
-   * When the dependency array is empty, useEffect will only be called once after the render
-   * When the dependency array is filled, it will re-render every time that value inside dependency
-   * array changes
-   */
-  useEffect(() => {
-    fetchRestaurants();
-  }, []);
-
-  const fetchRestaurants = async () => {
-    try {
-      const data = await fetch(SWIGGY_API_URL);
-      const jsonData = await data.json();
-
-      const restaurants =
-        jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
-      setResLists(restaurants);
-      setFilteredRestaurants(restaurants);
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+  const { error, resLists } = useRestaurants(setFilteredRestaurants);
 
   const filterRestaurants = () => {
     const filteredRestaurants = resLists.filter((res) =>
