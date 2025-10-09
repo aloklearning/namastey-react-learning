@@ -1,8 +1,9 @@
 import { useState } from "react";
 
-import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import RestaurantCard from "./RestaurantCard";
 import useRestaurants from "../utils/useRestaurants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 /**
  ** IMPORTANT *
@@ -10,9 +11,9 @@ import useRestaurants from "../utils/useRestaurants";
  * reconcilliation cycle (re-renders the component)
  */
 const Body = () => {
+  const isOnline = useOnlineStatus();
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
   const { error, resLists } = useRestaurants(setFilteredRestaurants);
 
   const filterRestaurants = () => {
@@ -23,6 +24,14 @@ const Body = () => {
     );
     setFilteredRestaurants(filteredRestaurants);
   };
+
+  if (!isOnline) {
+    return (
+      <h1>
+        Looks like you're offline! Please check your connection and try again;
+      </h1>
+    );
+  }
 
   if (error) {
     return <h1 style={{ color: "red" }}>{error}</h1>;
