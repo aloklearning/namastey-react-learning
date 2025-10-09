@@ -1,3 +1,4 @@
+import { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
@@ -7,6 +8,16 @@ import Error from "./components/Error";
 import Header from "./components/Header";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
+
+/**
+ * This is lazy loading which is also called these:
+ * - On Demand Loading/Code Splitting/Dyanmic Loading/Chunking
+ *
+ * This helps us reduce the load on the bundler, and create chunks
+ * of javascript files which are easier to load, when they are required.
+ * So the main JS file doesn't have all the code in it, which makes the project faster.
+ */
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const App = () => {
   return (
@@ -38,6 +49,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         Component: Contact,
+      },
+      {
+        path: "/grocery",
+        Component: Grocery,
       },
       {
         path: "/restaurants/:resId", // After collan (:) the route becomes dynamic in the param
