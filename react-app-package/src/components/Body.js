@@ -37,37 +37,39 @@ const Body = () => {
     return <h1 style={{ color: "red" }}>{error}</h1>;
   }
 
-  return resLists.length === 0 ? (
+  return filteredRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <div style={{ padding: "10px" }}>
-      <div className="search-filter-container">
-        <div className="search">
+      <div className="search-filter-container flex items-center-safe">
+        <div className="search m-3 p-3">
           <input
             type="text"
             value={searchText}
-            className="search-box"
             style={{ width: "15rem" }}
             placeholder="Type something here"
             onChange={(e) => setSearchText(e.target.value)}
+            className="search-box px-1 border border-solid border-black"
           />
           <button
-            style={{ marginInlineStart: "10px" }}
-            onClick={filterRestaurants}>
+            onClick={filterRestaurants}
+            className="bg-green-100 m-4 px-4 py-1 rounded-md cursor-pointer">
             Search
           </button>
         </div>
-        <button
-          style={{ marginInlineStart: "10px" }}
-          onClick={() => {
-            setResLists((res) =>
-              res.filter((item) => item.info.avgRating >= 4.5)
-            );
-          }}>
-          Top Rated Restaurants
-        </button>
+        <div>
+          <button
+            className="bg-gray-100 px-4 py-1 rounded-md cursor-pointer"
+            onClick={() => {
+              setFilteredRestaurants((res) =>
+                res.filter((item) => item.info.avgRating >= 4.5)
+              );
+            }}>
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap">
         {filteredRestaurants.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
