@@ -7,8 +7,6 @@ export const CDN_URL =
 // The below URL works well without CORS given by Namastey React Course Team
 // "https://raw.githubusercontent.com/namastedev/namaste-react/refs/heads/main/swiggy-api";
 // The current one which we are exporting needs CORS extention to be used else, CORS issue will persist
-export const SWIGGY_API_URL =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+export const SWIGGY_API_URL = "https://corsproxy.io/https://namastedev.com/api/v1/listRestaurants";
 
-export const SWIGGY_RESTAURANT_MENU_API_URL =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.97530&lng=77.59100&restaurantId=";
+export const SWIGGY_RESTAURANT_MENU_API_URL = "https://corsproxy.io/https://namastedev.com/api/v1/listRestaurantMenu/";

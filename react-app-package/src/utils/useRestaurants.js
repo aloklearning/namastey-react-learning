@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { SWIGGY_API_URL } from "../utils/constants";
+import { useEffect, useState } from 'react';
+import { SWIGGY_API_URL } from '../utils/constants';
 
 const useRestaurants = (setFilteredRestaurants) => {
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [resLists, setResLists] = useState([]);
 
   /**
@@ -11,16 +11,21 @@ const useRestaurants = (setFilteredRestaurants) => {
    * array changes
    */
   useEffect(() => {
-    fetchRestaurants();
+    const abortController = new AbortController();
+    fetchRestaurants(abortController);
+
+    return () => abortController.abort();
   }, []);
 
-  const fetchRestaurants = async () => {
+  const fetchRestaurants = async (abortController) => {
     try {
-      const data = await fetch(SWIGGY_API_URL);
+      const data = await fetch(SWIGGY_API_URL, {
+        signal: abortController.signal,
+      });
       const jsonData = await data.json();
 
       const restaurants =
-        jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        jsonData?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
       setResLists(restaurants);
       setFilteredRestaurants(restaurants);
