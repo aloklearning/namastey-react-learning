@@ -1,10 +1,10 @@
 import { useParams } from 'react-router';
 
-import Shimmer from './Shimmer';
+import Shimmer from '../components/Shimmer';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
-import RestaurantCategory from './RestaurantCategory';
+import RestaurantCategory from '../components/RestaurantCategory';
 
-const RestaurantMenu = () => {
+const RestaurantMenuPage = () => {
   // This destructured constant value is the name which you
   // have defined in the config of useBrowserRouter in App.js
   const { resId } = useParams();
@@ -38,4 +38,4 @@ const RestaurantMenu = () => {
   );
 };
 
-export default RestaurantMenu;
+export default RestaurantMenuPage;

@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
-import Shimmer from './Shimmer';
+import Shimmer from '../components/Shimmer';
 import useRestaurants from '../utils/useRestaurants';
 import useOnlineStatus from '../utils/useOnlineStatus';
-import RestaurantCard, { withVegLabel } from './RestaurantCard';
+import RestaurantCard, { withVegLabel } from '../components/RestaurantCard';
 
 /**
  ** IMPORTANT *
  * Whenever state variable updates, React triggers
  * reconcilliation cycle (re-renders the component)
  */
-const Body = () => {
+const HomePage = () => {
   const isOnline = useOnlineStatus();
   const [searchText, setSearchText] = useState('');
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -89,4 +89,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default HomePage;
