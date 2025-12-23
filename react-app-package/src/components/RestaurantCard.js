@@ -32,4 +32,21 @@ const RestaurantCard = ({ resData }) => {
   );
 };
 
+// Higher Order Component
+// Takes-in a component and return enhanced version of the component in a functional form
+export const withVegLabel = (RestaurantCard) => {
+  // Functional Component with JSX
+  return (props) => {
+    // JSX
+    return (
+      <div>
+        <label className='absolute rounded-b-md bg-gray-800 text-white m-2 p-2'>
+          Vegetarian
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default RestaurantCard;

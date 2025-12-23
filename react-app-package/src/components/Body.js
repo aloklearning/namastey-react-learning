@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import Shimmer from "./Shimmer";
-import RestaurantCard from "./RestaurantCard";
-import useRestaurants from "../utils/useRestaurants";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import Shimmer from './Shimmer';
+import useRestaurants from '../utils/useRestaurants';
+import useOnlineStatus from '../utils/useOnlineStatus';
+import RestaurantCard, { withVegLabel } from './RestaurantCard';
 
 /**
  ** IMPORTANT *
@@ -12,7 +12,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
  */
 const Body = () => {
   const isOnline = useOnlineStatus();
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const { error, resLists } = useRestaurants(setFilteredRestaurants);
 
@@ -25,6 +25,8 @@ const Body = () => {
     setFilteredRestaurants(filteredRestaurants);
   };
 
+  const RestaurantsWithVegLabel = withVegLabel(RestaurantCard);
+
   if (!isOnline) {
     return (
       <h1>
@@ -34,45 +36,54 @@ const Body = () => {
   }
 
   if (error) {
-    return <h1 style={{ color: "red" }}>{error}</h1>;
+    return <h1 style={{ color: 'red' }}>{error}</h1>;
   }
 
   return filteredRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div style={{ padding: "10px" }}>
-      <div className="search-filter-container flex items-center-safe">
-        <div className="search m-3 p-3">
+    <div style={{ padding: '10px' }}>
+      <div className='search-filter-container flex items-center-safe'>
+        <div className='search m-3 p-3'>
           <input
-            type="text"
+            type='text'
             value={searchText}
-            style={{ width: "15rem" }}
-            placeholder="Type something here"
+            style={{ width: '15rem' }}
+            placeholder='Type something here'
             onChange={(e) => setSearchText(e.target.value)}
-            className="search-box px-1 border border-solid border-black"
+            className='search-box px-1 border border-solid border-black'
           />
           <button
             onClick={filterRestaurants}
-            className="bg-green-100 m-4 px-4 py-1 rounded-md cursor-pointer">
+            className='bg-green-100 m-4 px-4 py-1 rounded-md cursor-pointer'
+          >
             Search
           </button>
         </div>
         <div>
           <button
-            className="bg-gray-100 px-4 py-1 rounded-md cursor-pointer"
+            className='bg-gray-100 px-4 py-1 rounded-md cursor-pointer'
             onClick={() => {
               setFilteredRestaurants((res) =>
                 res.filter((item) => item.info.avgRating >= 4.5)
               );
-            }}>
+            }}
+          >
             Top Rated Restaurants
           </button>
         </div>
       </div>
-      <div className="res-container flex flex-wrap">
-        {filteredRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
+      <div className='res-container flex flex-wrap'>
+        {filteredRestaurants.map((restaurant) =>
+          restaurant.info.veg ? (
+            <RestaurantsWithVegLabel
+              key={restaurant.info.id}
+              resData={restaurant}
+            />
+          ) : (
+            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          )
+        )}
       </div>
     </div>
   );
