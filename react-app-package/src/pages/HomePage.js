@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Shimmer from '../components/Shimmer';
 import useRestaurants from '../utils/useRestaurants';
+import { userContext } from '../contexts/userContext';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import RestaurantCard, { withVegLabel } from '../components/RestaurantCard';
 
@@ -15,6 +16,11 @@ const HomePage = () => {
   const [searchText, setSearchText] = useState('');
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const { error, resLists } = useRestaurants(setFilteredRestaurants);
+
+  const { loggedInUser, setUserName } = userContext();
+  const handleTextChange = (e) => {
+    setUserName(e.target.value);
+  };
 
   const filterRestaurants = () => {
     const filteredRestaurants = resLists.filter((res) =>
@@ -71,6 +77,18 @@ const HomePage = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div className='search m-3 p-3'>
+          <label>
+            UserName:{' '}
+            <input
+              type='text'
+              value={loggedInUser}
+              style={{ width: '15rem' }}
+              onChange={handleTextChange}
+              className='search-box px-1 border border-solid border-black'
+            />
+          </label>
         </div>
       </div>
       <div className='res-container flex flex-wrap'>

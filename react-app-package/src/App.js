@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import Header from './components/Header';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import UserContextProvider from './contexts/userContext';
 import RestaurantMenuPage from './pages/RestaurantMenuPage';
 
 /**
@@ -21,7 +22,7 @@ const GroceryPage = lazy(() => import('./pages/GroceryPage'));
 
 const App = () => {
   return (
-    <div>
+    <UserContextProvider>
       <Header />
       {/* 
         Outlet helps the react to replaces the item inside 
@@ -29,7 +30,7 @@ const App = () => {
         placeholder for the new pages/component to come-in
       */}
       <Outlet />
-    </div>
+    </UserContextProvider>
   );
 };
 
