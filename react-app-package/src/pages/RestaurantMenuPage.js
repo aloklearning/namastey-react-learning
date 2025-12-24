@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import { useParams } from 'react-router';
-
 import Shimmer from '../components/Shimmer';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
 import RestaurantCategory from '../components/RestaurantCategory';
@@ -9,6 +9,7 @@ const RestaurantMenuPage = () => {
   // have defined in the config of useBrowserRouter in App.js
   const { resId } = useParams();
   const resMenu = useRestaurantMenu(resId);
+  const [activeItem, setActiveItem] = useState(null);
 
   if (!resMenu) return <Shimmer />;
 
@@ -32,7 +33,12 @@ const RestaurantMenuPage = () => {
 
       {/* Accordion */}
       {menuItems.map((item) => (
-        <RestaurantCategory key={item?.card?.card?.title} menuItem={item} />
+        <RestaurantCategory
+          menuItem={item}
+          key={item?.card?.card?.title}
+          currentActiveItem={activeItem}
+          setCurrentActiveItem={setActiveItem}
+        />
       ))}
     </div>
   );
