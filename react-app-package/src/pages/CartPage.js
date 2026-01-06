@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import Shimmer from '../components/Shimmer';
 
-const GroceryPage = () => {
+const CartPage = () => {
   return (
     <Suspense fallback={<Shimmer />}>
-      <h1>This is a grocery page. We have a lot of offering for you.</h1>
+      <h1>This is a cart page.</h1>
     </Suspense>
   );
 };
 
-export default GroceryPage;
+export default CartPage;

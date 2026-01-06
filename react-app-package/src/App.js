@@ -1,8 +1,10 @@
 import { lazy } from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router';
 
 import Error from './components/Error';
+import appStore from './redux/appStore';
 import HomePage from './pages/HomePage';
 import Header from './components/Header';
 import AboutPage from './pages/AboutPage';
@@ -18,19 +20,22 @@ import RestaurantMenuPage from './pages/RestaurantMenuPage';
  * of javascript files which are easier to load, when they are required.
  * So the main JS file doesn't have all the code in it, which makes the project faster.
  */
-const GroceryPage = lazy(() => import('./pages/GroceryPage'));
+const CartPage = lazy(() => import('./pages/CartPage'));
 
 const App = () => {
   return (
-    <UserContextProvider>
-      <Header />
-      {/* 
+    // Providing the store to be accessible to the wrapped children
+    <Provider store={appStore}>
+      <UserContextProvider>
+        <Header />
+        {/* 
         Outlet helps the react to replaces the item inside 
         the same page based upon the new path. It's like a 
         placeholder for the new pages/component to come-in
       */}
-      <Outlet />
-    </UserContextProvider>
+        <Outlet />
+      </UserContextProvider>
+    </Provider>
   );
 };
 
@@ -52,8 +57,8 @@ const appRouter = createBrowserRouter([
         Component: ContactPage,
       },
       {
-        path: '/grocery',
-        Component: GroceryPage,
+        path: '/cart',
+        Component: CartPage,
       },
       {
         path: '/restaurants/:resId', // After collan (:) the route becomes dynamic in the param
