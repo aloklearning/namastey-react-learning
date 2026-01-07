@@ -35,6 +35,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 - [Babel](https://babeljs.io/)
   - [Babel Playground](https://babeljs.io/repl#)
 - [Browsers List](https://browserslist.dev/)
+- [Redux Toolkit Query](https://redux-toolkit.js.org/tutorials/rtk-query)
 - [Parcel Documentation](https://parceljs.org/getting-started/webapp/)
 - [React without JSX (Old)](https://legacy.reactjs.org/docs/react-without-jsx.html)
 - [React without JSX (New)](https://react.dev/reference/react/createElement#creating-an-element-without-jsx)
