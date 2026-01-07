@@ -9,7 +9,7 @@ const CategoryItem = ({ categoryItem }) => {
   const dispatch = useDispatch();
   const handleAddItem = () => {
     // Calling the reducer function to make changes to the slice store
-    dispatch(addItem(itemInfo?.name));
+    dispatch(addItem(categoryItem));
   };
 
   return (
