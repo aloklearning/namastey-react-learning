@@ -16,13 +16,25 @@ A project created to learn in-depth of React fundamentals while creating a produ
 
 # Types of Routing
 
-## Server Side Routing
+## 1. Server Side Routing
 
 This type of routing happens when the client requests server for every page of the specified route. The server responds with the HTML page, and then it gets reflected on the client (browser).
 
-# Client Side Routing
+## 2. Client Side Routing
 
 This type of routing happens when the page/project is already loaded, and it is being replaced by the page/route asked on the client itself, making it faster, smooth UX and better routing. This is the reason why we call this process as **Single Page Application (SPA)**.
+
+# Setting Up Testing Environment
+
+To set up the testing environment we must be mindful of the following things to be included in our project (No `create-react-app` | App from scratch)
+
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/): A library built on top of **DOM Testing Library**, which is being used via DOM APIs to be able to test the React Component(s).
+- [Jest](https://jestjs.io/docs/getting-started): It is a JavaScript Testing Framework with a focus on simplicity. RTL (React Testing Library) uses this behind the scenes. Additionally, **Babel-Jest** is required with the setup along with the configurations `babel.config.js` mentioned here in the link [using babel](https://jestjs.io/docs/getting-started#using-babel), if we are using Babel in the project (Parcel uses Babel behing the scenes) for transpilation.\
+- **Jest Config** is the next step which needs a setup `npm init jest@latest` (`npx jest --init` has been deprecated). More details can be found here [React Testing Library Setup](https://testing-library.com/docs/react-testing-library/setup/). For specifics of Jest 28, read more info here [Jest >=28 Setup](https://testing-library.com/docs/react-testing-library/setup/#jest-28), which needs JSDOM library to be installed in the project.
+
+### ⚙️ Parcel Conflicting with Jest Babel
+
+This is a known thing, where the Babel-Jest config conflicts with the Parcel in-built Babel's config. In order to work with this, this [documentation](https://parceljs.org/languages/javascript/#babel) is a must read. And in short, to fix that, you need to disable Parcel's own Babel config and let Jest Babel take it over by doing the `.parcelrc` work mentioned here [usage with other tools](https://parceljs.org/languages/javascript/#usage-with-other-tools).
 
 <!-- LICENSE -->
 
