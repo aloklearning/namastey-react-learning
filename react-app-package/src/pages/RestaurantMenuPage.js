@@ -32,7 +32,7 @@ const RestaurantMenuPage = () => {
       </p>
 
       {/* Accordion */}
-      {menuItems.map((item) => (
+      {menuItems?.map((item) => (
         <RestaurantCategory
           menuItem={item}
           key={item?.card?.card?.title}

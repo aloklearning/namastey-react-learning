@@ -13,7 +13,10 @@ const CategoryItem = ({ categoryItem }) => {
   };
 
   return (
-    <div className='text-left border-gray-300 border-b-2 my-7 pb-7 flex justify-between'>
+    <div
+      data-testid='food-item'
+      className='text-left border-gray-300 border-b-2 my-7 pb-7 flex justify-between'
+    >
       <div className='w-10/12'>
         <p className=' text-lg font-semibold text-gray-700'>{itemInfo?.name}</p>
         <p>

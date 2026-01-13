@@ -23,6 +23,7 @@ const RestaurantCategory = ({
     <div className='shadow-lg p-5 mx-auto my-6 w-6/12 rounded-md bg-gray-100'>
       <div
         onClick={handleToggle}
+        data-testid='menu-item'
         className='flex justify-between cursor-pointer'
       >
         <span className='font-semibold'>
