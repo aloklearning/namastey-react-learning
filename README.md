@@ -1,6 +1,11 @@
 # Namastey React Learning
 
+![Static Badge](https://img.shields.io/badge/coverage-95%25-orange)
+![Static Badge](https://img.shields.io/badge/github-repo-blue?logo=github)
+
 A project created to learn in-depth of React fundamentals while creating a production ready app from the course [Namastey React](https://namastedev.com/learn/namaste-react) 🚀, created by Akshay Saini.
+
+<img width="1904" height="930" alt="Screenshot 2026-01-14 at 00 37 40" src="https://github.com/user-attachments/assets/47960d10-ddd4-4a00-8e39-30bdf768b931" />
 
 # Why React is Fast?
 
