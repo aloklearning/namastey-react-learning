@@ -54,6 +54,7 @@ const HomePage = () => {
           <input
             type='text'
             value={searchText}
+            data-testid='search-input'
             style={{ width: '15rem' }}
             placeholder='Type something here'
             onChange={(e) => setSearchText(e.target.value)}

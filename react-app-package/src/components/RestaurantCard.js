@@ -16,7 +16,10 @@ const RestaurantCard = ({ resData }) => {
   return (
     <Link to={`/restaurants/${resData.info.id}`}>
       {/* To add a constant in tailwindcss you insert the value in "[]" as shown below in w-[] */}
-      <div className='res-card m-4 p-4 w-[250px] bg-gray-100 rounded-lg hover:bg-gray-200'>
+      <div
+        data-testid='res-card'
+        className='res-card m-4 p-4 w-[250px] bg-gray-100 rounded-lg hover:bg-gray-200'
+      >
         <img
           alt='res-image'
           className='res-image rounded-lg'
