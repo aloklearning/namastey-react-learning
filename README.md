@@ -7,6 +7,47 @@ A project created to learn in-depth of React fundamentals while creating a produ
 
 <img width="1904" height="930" alt="Screenshot 2026-01-14 at 00 37 40" src="https://github.com/user-attachments/assets/47960d10-ddd4-4a00-8e39-30bdf768b931" />
 
+# Tech Stacks Used
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Hooks](https://img.shields.io/badge/react%20hooks-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2306B6D4.svg?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Context API](https://img.shields.io/badge/context%20api-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Redux Toolkit](https://img.shields.io/badge/redux%20toolkit-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-DD1B16?style=for-the-badge&logo=jest&logoColor=white)
+![React Testing Library](https://img.shields.io/badge/react%20testing%20library-%23E33332.svg?style=for-the-badge&logo=testing-library&logoColor=white)
+![Parcel](https://img.shields.io/badge/parcel-%23213A5C.svg?style=for-the-badge&logo=parcel&logoColor=white)
+
+# Running Project
+
+It is recommended that you run the completed version of the project which is inside `react-app-package`. Make sure you are doing these once you have cloned the project successfully.
+
+> **\*Additional note:** Go checkout `package.json` and see what are the scripts available at your convenience. Play around with it.\*
+
+```bash
+>>> cd react-app-package
+>>> npm install
+>>> npm start
+```
+
+# Running Test
+
+Please follow the previous pointer **Running Project** before you do this. There are two version of running tests, one is **without live running** and **with live running**, like React HMR (Hot Module Replacement). If you want to make changes into the test, it is recommended you can go ahead with `npm run watch-test`.
+
+```bash
+>>> npm run test
+
+OR
+
+>>> npm run watch-test
+```
+
 # Why React is Fast?
 
 - React has a capability of updating the changes quickly to the UI.
