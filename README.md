@@ -28,7 +28,7 @@ A project created to learn in-depth of React fundamentals while creating a produ
 
 It is recommended that you run the completed version of the project which is inside `react-app-package`. Make sure you are doing these once you have cloned the project successfully.
 
-> **\*Additional note:** Go checkout `package.json` and see what are the scripts available at your convenience. Play around with it.\*
+> ***Additional note:** Go checkout `package.json` and see what are the scripts available at your convenience. Play around with it.*
 
 ```bash
 >>> cd react-app-package
